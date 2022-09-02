@@ -16,5 +16,7 @@ namespace Business.Abstract
         IDataResult<Product> GetById(int productId);
 
         IDataResult<List<ProductDetailDto>> GetProductDetails();
+
+        // RESTFUL --> HTTP --> TCP (İki cihazı birbiriyle görüştürme vs.)
     }
 }
