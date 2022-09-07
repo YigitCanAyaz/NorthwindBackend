@@ -29,7 +29,8 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-
+        // Claim 
+        // [SecuredOperation("product.add")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -38,7 +39,7 @@ namespace Business.Concrete
             // ValidationTool.Validate(new ProductValidator(), product);
 
             // business codes
-            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName), CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceded());
+            IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName), CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfCategoryLimitExceeded());
 
             if (result != null)
             {
@@ -116,7 +117,7 @@ namespace Business.Concrete
         // Eğer mevcut kategori sayısı 15'i geçtiyse sisteme yeni ürün eklenemez
         // Bu kuralı kategoride yazmamamızın nedeni tek başına bir servis olmaması
         // Bu servis product için lazımdır (o servisi kullanan bir ürünün nasıl ele aldığı ile alakalı bu yaptığımız)
-        private IResult CheckIfCategoryLimitExceded()
+        private IResult CheckIfCategoryLimitExceeded()
         {
             var result = _categoryService.GetAll();
 
