@@ -8,6 +8,7 @@ namespace DataAccess.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {
+        // rollerini çekmek istiyoruz
         List<OperationClaim> GetClaims(User user);
     }
 

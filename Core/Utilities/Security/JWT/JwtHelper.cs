@@ -12,7 +12,7 @@ using System.Text;
 
 namespace Core.Utilities.Security.JWT
 {
-    public partial class JwtHelper : ITokenHelper
+    public class JwtHelper : ITokenHelper
     {
         public IConfiguration Configuration { get; } // appsettings.json'ı okumaya yarar (IConfiguration)
         private TokenOptions _tokenOptions; // token'ın değerleri

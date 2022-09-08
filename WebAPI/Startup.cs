@@ -1,8 +1,5 @@
-using Business.Abstract;
-using Business.Concrete;
 using Core.Utilities.Security.Encryption;
-using DataAccess.Abstract;
-using DataAccess.Concrete.EntityFramework;
+using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
