@@ -7,12 +7,15 @@ using System.Text;
 
 namespace Core.Extensions
 {
+    // Extension sınıfları static olur
     public static class ClaimExtensions
     {
         // this ICollection<Claim> => Ben bunu extend ediyorum demek
         // Burada var olan class'ı extend edip yeni metodlar yazıyoruz
+        // ICollection türünde Claim'i extend ediyoruz (this => neyi extend edeceğiz, ve parametre (email))
         public static void AddEmail(this ICollection<Claim> claims, string email)
         {
+            // Çeşitli kaydedilmiş isimler var (JwtRegisteredClaimNames'in içerisinde) onlara email ekliyoruz
             claims.Add(new Claim(JwtRegisteredClaimNames.Email, email));
         }
 
