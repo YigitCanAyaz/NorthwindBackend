@@ -19,7 +19,7 @@ namespace Business.BusinessAspects.Autofac
         private IHttpContextAccessor _httpContextAccessor;
 
         // rolleri ver (virgülle ver birden fazlaysa)
-        // WindowsForm için burayı değiştireceğimiz zaman Autofac'de yaptığımız injectin değerlerini alacak
+        // WindowsForm için burayı değiştireceğimiz zaman Autofac'de yaptığımız injection değerlerini alacak
         public SecuredOperation(string roles)
         {
             _roles = roles.Split(',');
